@@ -78,23 +78,51 @@
 				width: 30%;
 				height: auto;
 			}
+            
+            #song-input {
+                background: darken(white, 2%);
+                padding: .5em;
+                font-size: 1em;
+                margin: 8px auto;
+                text-align: center;
+                border: 1px solid grey;
+            }
+            
+            #song-input:focus {
+                box-shadow: 0 0 5px #ff8b65;
+                border: 1px solid #ff8b65;
+            }
+            
+            ::-webkit-input-placeholder {
+                color: #ff8b65;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                color: #ff8b65;  
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                color: #ff8b65;  
+            }
+
+            :-ms-input-placeholder {  
+                color: #ff8b65;  
+            }
 		</style>
 		
 		<div class="sky" id="sky">
 		<img src="design\Campfire Songs Logo.png" id="logo-text">
+            <div>
 				<script type="text/javascript">var submitted=false;</script>
 				<iframe name="hidden_iframe" id="hidden_iframe"	style="display:none;" onload="if(submitted)	{window.location='thank-you.html';}"></iframe>
 				<form action="https://docs.google.com/forms/d/1AOjfjArW5FuzR21SFh83dTOMPh6c-0oUV9gTK2YOdrU/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;" class="contactform">
 					<br><br>
 					<p class="info-text">Thank you for submitting a request!</p>
 					<p class="info-text">Would you like to submit another?</p>
-					</p>
 					<br>
-					<p>
-						<p class="input_wrapper"><input type="text" name="entry.851002791" value="" id ="contact_nom"><label for="contact_nom">SONG</label></p>
-					</p>
+					    <input type="text" name="entry.851002791" value="" id ="song-input" placeholder="SONG" onfocus="this.placeholder = ''" onblur="this.placeholder = 'SONG'"><label for="song-input"></label>
 					<div id="filename_display"></div>
-					<p><input type="submit" value="SUBMIT" class="orange-button" /></p>
+					<input type="submit" value="SUBMIT" class="orange-button" />
 				</form>
 			</div>
 		</div>
